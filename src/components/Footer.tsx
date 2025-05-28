@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin, Facebook, Mail, ArrowUpRight } from 'lucide-react';
+import { Linkedin, ArrowUpRight } from 'lucide-react';
 import Behance from '../components/icons/behance.svg'; 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -78,10 +78,11 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-3">Contact Us</h3>
             <address className="not-italic text-gray-400 text-sm space-y-2">
-              <p>123 Engineering Boulevard</p>
+              {/* <p>123 Engineering Boulevard</p> */}
               <p>Cairo, Egypt</p>
               <p className="pt-2">
-                <a href="tel:+2011234567890" className="hover:text-white transition-colors duration-300">+20 11234 567890</a>
+                <a href="tel:+201111127627" className="hover:text-white transition-colors duration-300 block">+20 11111 27627</a>
+                <a href="tel:+201153142759" className="hover:text-white transition-colors duration-300">+20 11531 42759</a>
               </p>
               <p>
                 <a href="mailto:info@san-studios.com" className="hover:text-white transition-colors duration-300">info@san-studios.com</a>
@@ -89,7 +90,7 @@ const Footer: React.FC = () => {
             </address>
             <div className="mt-4">
               <a 
-                href="https://calendly.com" 
+                href="https://calendly.com/sanstudio" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-sm text-white hover:underline transition-colors duration-300"

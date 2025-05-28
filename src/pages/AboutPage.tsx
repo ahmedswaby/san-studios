@@ -1,8 +1,13 @@
-import React from 'react';
+import React , { useEffect } from 'react';
 import { ArrowUpRight, Award, Users, Clock, Globe } from 'lucide-react';
-
+import { useLocation } from "react-router-dom";
 const AboutPage: React.FC = () => {
-
+  const { pathname } = useLocation();
+    
+      useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [pathname]);
+  
   const stats = [
     {
       icon: Award,
@@ -26,28 +31,28 @@ const AboutPage: React.FC = () => {
     }
   ];
 
-  const team = [
-    {
-      name: 'Sarah Anderson',
-      role: 'Principal Engineer',
-      image: 'https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg'
-    },
-    {
-      name: 'Michael Chen',
-      role: 'Technical Director',
-      image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg'
-    },
-    {
-      name: 'Emily Rodriguez',
-      role: 'Structural Engineer',
-      image: 'https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg'
-    },
-    {
-      name: 'David Kim',
-      role: '3D Modeling Specialist',
-      image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg'
-    }
-  ];
+  // const team = [
+  //   {
+  //     name: 'Sarah Anderson',
+  //     role: 'Principal Engineer',
+  //     image: 'https://images.pexels.com/photos/3796217/pexels-photo-3796217.jpeg'
+  //   },
+  //   {
+  //     name: 'Michael Chen',
+  //     role: 'Technical Director',
+  //     image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg'
+  //   },
+  //   {
+  //     name: 'Emily Rodriguez',
+  //     role: 'Structural Engineer',
+  //     image: 'https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg'
+  //   },
+  //   {
+  //     name: 'David Kim',
+  //     role: '3D Modeling Specialist',
+  //     image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg'
+  //   }
+  // ];
 
   return (
     <div className="min-h-screen pt-24 pb-20">
@@ -147,28 +152,28 @@ const AboutPage: React.FC = () => {
       </section> */}
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-900 mt-20">
+      <section className="py-20 mt-20">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Ready to Work Together?
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-xl text-gray-900 mb-8">
               Let's discuss how our expertise can help bring your engineering vision to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://calendly.com"
+                href="https://calendly.com/sanstudio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transition-colors duration-300"
+                className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-full font-medium hover:bg-white hover:text-gray-900  transition-colors duration-300"
               >
                 Schedule a Meeting
                 <ArrowUpRight size={20} className="ml-2" />
               </a>
               <a
                 href="mailto:info@san-studios.com"
-                className="inline-flex items-center px-6 py-3 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-gray-900 transition-all duration-300"
+                className="inline-flex items-center px-6 py-3 border-2 border-gray-900 text-gray-900 rounded-full font-medium hover:bg-gray-900 hover:text-white transition-all duration-300"
               >
                 Contact Us
                 <ArrowUpRight size={20} className="ml-2" />

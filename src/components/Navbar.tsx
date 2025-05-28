@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
-import logo from '../images/logo.png'
+import logo from '../images/san-80.png'
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
             <a 
-              href="https://calendly.com" 
+              href="https://calendly.com/sanstudio" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-full hover:bg-gray-800 transition-colors duration-300"
@@ -92,7 +92,7 @@ const Navbar: React.FC = () => {
           ))}
           <div className="mt-auto pt-6">
             <a 
-              href="https://calendly.com" 
+              href="https://calendly.com/sanstudio" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 px-5 py-3 w-full justify-center text-white bg-gray-900 rounded-md hover:bg-gray-800 transition-colors duration-300"

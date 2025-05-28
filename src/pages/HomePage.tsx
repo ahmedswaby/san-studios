@@ -1,9 +1,17 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
+import { useLocation } from "react-router-dom";
 
 const HomePage: React.FC = () => {
+
+  const { pathname } = useLocation();
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
   const services = [
     {
       title: 'Architectural Design',
@@ -40,9 +48,9 @@ const HomePage: React.FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Expertise</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-        We deliver a wide spectrum of architectural and engineering solutions,
-thoughtfully crafted to address complex challenges with clarity, precision,
-and innovation
+              We deliver a wide spectrum of architectural and engineering solutions,
+              thoughtfully crafted to address complex challenges with clarity, precision,
+              and innovation
             </p>
           </div>
 
@@ -87,9 +95,9 @@ and innovation
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              'https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg',
-              'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg',
-              'https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg'
+              '/public/projects/qatar/1.jpg',
+              '/public/projects/medina/1.jpg',
+              '/public/projects/residential/1.jpg'
             ].map((image, index) => (
               <Link key={index} to="/portfolio" className="group relative block aspect-square overflow-hidden rounded-xl">
                 <img
@@ -129,7 +137,7 @@ and innovation
               Let's collaborate to bring your ideas to life with innovative engineering solutions.
             </p>
             <a
-              href="https://calendly.com"
+              href="https://calendly.com/sanstudio"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-colors duration-300"

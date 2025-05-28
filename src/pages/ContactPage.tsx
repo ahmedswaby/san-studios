@@ -1,7 +1,21 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Clock, ArrowUpRight } from 'lucide-react';
+import React ,  { useState, useRef, useEffect }from 'react';
+import { Mail, Phone, Clock, ArrowUpRight } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { useLocation } from "react-router-dom";
+
 
 const ContactPage: React.FC = () => {
+ const { pathname } = useLocation();
+    
+      useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [pathname]);
+    const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const form = useRef();
   const contactInfo = [
     // {
     //   icon: MapPin,
@@ -16,7 +30,7 @@ const ContactPage: React.FC = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: ['info@san-studios.com', 'support@san-studios.com']
+      details: ['info@san-studios.com']
     },
     {
       icon: Clock,
@@ -24,6 +38,26 @@ const ContactPage: React.FC = () => {
       details: ['Sunday - Thursday', '9:00 AM - 6:00 PM']
     }
   ];
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+   const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+  // emailjs.sendForm('service_foc17ys', 'template_sen4h29', form.current, 'zRCrK_iDD8ijqiR_U')
+  //   .then(() => {
+  //       alert('Message sent successfully!');
+  //   }, (error) => {
+  //       alert('Failed to send message. ' + error);
+  //   });
+
+
+  };
 
   return (
     <div className="min-h-screen pt-24 pb-20">
@@ -66,7 +100,7 @@ const ContactPage: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Send Us a Message</h2>
-            <form className="space-y-6">
+            <form className="space-y-6" ref={form} onSubmit={handleSubmit} >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -78,6 +112,8 @@ const ContactPage: React.FC = () => {
                     name="name"
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent"
                     required
+                      value={formData.name}
+                  onChange={handleChange}
                   />
                 </div>
                 <div>
@@ -88,22 +124,12 @@ const ContactPage: React.FC = () => {
                     type="email"
                     id="email"
                     name="email"
+                        value={formData.email}
+                  onChange={handleChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent"
                     required
                   />
                 </div>
-              </div>
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent"
-                  required
-                />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
@@ -112,6 +138,8 @@ const ContactPage: React.FC = () => {
                 <textarea
                   id="message"
                   name="message"
+                    value={formData.message}
+                  onChange={handleChange}
                   rows={6}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-gray-900 focus:border-transparent"
                   required
@@ -131,7 +159,7 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="aspect-video rounded-xl overflow-hidden">
             <iframe
@@ -145,10 +173,10 @@ const ContactPage: React.FC = () => {
             ></iframe>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-20 text-gray-900  bg-gray-50">
+      <section className="py-20 text-gray-900">
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -158,7 +186,7 @@ const ContactPage: React.FC = () => {
               Schedule a free consultation to discuss your engineering needs.
             </p>
             <a
-              href="https://calendly.com"
+              href="https://calendly.com/sanstudio"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-colors duration-300"

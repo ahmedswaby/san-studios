@@ -1,7 +1,16 @@
-import React from 'react';
-import { ArrowUpRight, Building2, Ruler, Cuboid as Cube, FileText, Users, Workflow } from 'lucide-react';
+import React , { useEffect } from 'react';
+import { ArrowUpRight, Building2, Cuboid as Cube, FileText } from 'lucide-react';
+import urban from '../images/interioricon-bLack.png'
+    import { useLocation } from "react-router-dom";
 
 const ServicesPage: React.FC = () => {
+
+ const { pathname } = useLocation();
+    
+      useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [pathname]);
+
   const services = [
     {
       icon: Building2,
@@ -9,14 +18,15 @@ const ServicesPage: React.FC = () => {
       description: 'Innovative architectural concepts that blend functionality, aesthetics, and environmental sensitivity from idea to execution.',
       features: [
         "Conceptual Design",
-         "Site Planning & Integration",
-         'Sustainable Design Strategies',
-         'Design Development & Coordination',
-         'Feasibility Studies',
+        "Site Planning & Integration",
+        'Sustainable Design Strategies',
+        'Design Development & Coordination',
+        'Feasibility Studies',
       ]
     },
     {
-      icon: Ruler,
+      icon: '',
+      img: urban,
       title: 'Urban Design',
       description: 'Creative urban design solutions that enhance connectivity, functionality, and the quality of public spaces.',
       features: [
@@ -82,11 +92,11 @@ const ServicesPage: React.FC = () => {
             </h1>
             <p className="text-xl text-gray-300 mb-8">
               We deliver a wide spectrum of architectural and engineering solutions,
-thoughtfully crafted to address complex challenges with clarity, precision,
-and innovation.
+              thoughtfully crafted to address complex challenges with clarity, precision,
+              and innovation.
             </p>
             <a
-              href="https://calendly.com"
+              href="https://calendly.com/sanstudio"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 bg-white text-gray-900 rounded-full font-medium hover:bg-gray-100 transition-colors duration-300"
@@ -105,11 +115,15 @@ and innovation.
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
-                <div 
+                <div
                   key={index}
                   className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300"
                 >
-                  <Icon className="w-12 h-12 text-gray-900 mb-6" />
+                  {Icon ? 
+                   <Icon className="w-12 h-12 text-gray-900 mb-6" />
+                   :
+                   <img src={service.img} alt={service.title} className="w-12 h-12 text-gray-900 mb-6" />
+                  }
                   <h3 className="text-2xl font-semibold text-gray-900 mb-4">
                     {service.title}
                   </h3>
@@ -143,7 +157,7 @@ and innovation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://calendly.com"
+                href="https://calendly.com/sanstudio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-colors duration-300"

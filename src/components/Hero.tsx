@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
             Engineering Excellence Through Innovative Design
           </h1>
           <p className="text-xl text-gray-200 mb-8">
-           “AT SAN STUDIO We transform complex challenges into elegant solutions, bringing your engineering visions to life with precision and creativity.”.
+           AT SAN STUDIO We transform complex challenges into elegant solutions, bringing your engineering visions to life with precision and creativity.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
               <ArrowUpRight className="ml-2" size={20} />
             </Link>
             <a
-              href="https://calendly.com"
+              href="https://calendly.com/sanstudio"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white rounded-full font-medium hover:bg-white hover:text-gray-900 transition-all duration-300"
