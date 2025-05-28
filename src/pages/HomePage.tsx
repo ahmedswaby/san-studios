@@ -95,9 +95,9 @@ const HomePage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              '/public/projects/qatar/1.jpg',
-              '/public/projects/medina/1.jpg',
-              '/public/projects/residential/1.jpg'
+              '/projects/qatar/1.jpg',
+              '/projects/medina/1.jpg',
+              '/projects/residential/1.jpg'
             ].map((image, index) => (
               <Link key={index} to="/portfolio" className="group relative block aspect-square overflow-hidden rounded-xl">
                 <img

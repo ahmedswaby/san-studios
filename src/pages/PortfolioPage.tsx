@@ -14,35 +14,35 @@ const PortfolioPage: React.FC = () => {
       id: 5,
       title: 'WUKAIR CENTRAL',
       description: 'Qatar boasts a rich history and unique cultural heritage while experiencing sustainable growth in the real estate sector. Inspired by this, we are excited to introduce a unique residential-commercial project that blends traditional and contemporary Qatari styles. This development is designed to meet the needs of investors and residents seeking a distinctive living experience.',
-      image: '/public/projects/qatar/1.jpg',
+      image: '/projects/qatar/1.jpg',
       year: '2024'
     },
     {
       id: 6,
       title: 'AL RABWA RESIDENCES',
       description: 'This contemporary residential complex is designed to blend timeless elegance with modern living. Comprising two symmetrical blocks connected by a central glass atrium, the architecture reflects a refined balance between bold geometric forms and natural textures.',
-      image: '/public/projects/residential/1.jpg',
+      image: '/projects/residential/1.jpg',
       year: '2024'
     },
     {
       id: 1,
       title: 'TABUK LUXE HOTEL',
       description: 'The hotel boasts a cutting-edge architectural design, characterized by dynamic facades that seamlessly blend aesthetics with functionality. The use of advanced materials and geometric patterns creates a visually striking exterior, ensuring that the hotel stands as an iconic landmark in the urban landscape.',
-      image: '/public/projects/tabok/1.jpg',
+      image: '/projects/tabok/1.jpg',
       year: '2023'
     },
     {
       id: 2,
       title: 'SAS RTL HOTEL',
       description: 'The hotel, located in the heart of Medina, Saudi Arabia, offers a unique blend of modern luxury and cultural reverence. Set in a prime location, the design seamlessly integrates with the spiritual and historical significance of the city, while standing out with its striking contemporary facade.',
-      image: '/public/projects/medina/1.jpg',
+      image: '/projects/medina/1.jpg',
       year: '2023'
     },
     {
       id: 3,
       title: 'AL-MUZAIN BARBERSHOP',
       description: 'This project showcases a refined and modern AL-MUZAIN BARBERSHOP interior designed to offer a premium grooming experience in a sophisticated setting. The design concept blends minimalist elegance with functional efficiency, creating a welcoming and luxurious atmosphere for clients',
-      image: '/public/projects/barber-shop/5.jpg',
+      image: '/projects/barber-shop/5.jpg',
       year: '2024'
     },
     {
@@ -50,7 +50,7 @@ const PortfolioPage: React.FC = () => {
       title: 'PRIVATE LIVING ROOM',
 
       description: 'This reception space embodies a harmonious fusion of modern sophistication and natural warmth. The design concept focuses on creating an inviting and upscale environment through a refined palette of earthy neutrals, soft greens, and textured materials.',
-      image: '/public/projects/reception/1.jpg',
+      image: '/projects/reception/1.jpg',
       year: '2024'
     },
    
